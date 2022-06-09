@@ -35,7 +35,7 @@ RUN chown -R www-data:www-data /var/www
 
 WORKDIR /var/www
 EXPOSE 21 80
-USER www-data
+# USER www-data
 ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
 
 
