@@ -2,4 +2,4 @@
 
 echo "------------------- START - UP ----------------------------"
 
-/usr/bin/supervisord -n
+/usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
