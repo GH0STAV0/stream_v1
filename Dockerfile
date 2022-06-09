@@ -30,7 +30,7 @@ RUN $STARTUPDIR/startup.sh
 RUN chown -R www-data:www-data /var/www
 
 WORKDIR /var/www
-EXPOSE 21 80
 USER www-data
+EXPOSE 21 80
 
 #CMD ["php","-S","0.0.0.0:8001","-t","html"]
