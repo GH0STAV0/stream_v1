@@ -19,7 +19,7 @@ RUN apt-get update \
 #COPY /etc/vsftpd.conf /etc/vsftpd.conf.backup 00000
 ADD ./etc/ /etc/
 
-#COPY ./sv/sync.conf /etc/supervisor/conf.d/
+COPY ./etc/conf.d/sync.conf /etc/supervisor/conf.d/
 
 COPY cnf/vsftpd.conf /etc/vsftpd.conf
 
