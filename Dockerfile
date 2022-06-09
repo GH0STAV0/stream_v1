@@ -33,4 +33,4 @@ WORKDIR /var/www
 EXPOSE 21 80
 #USER www-data
 
-#CMD ["php","-S","0.0.0.0:8001","-t","html"]
+CMD ["php","-S","0.0.0.0:8001","-t","html"]
