@@ -35,7 +35,7 @@ RUN $STARTUPDIR/sync.sh
 RUN chown -R www-data:www-data /var/www
 
 WORKDIR /var/www
-EXPOSE 21 80
+EXPOSE 21 80 9001
 # USER www-data
 ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
 
