@@ -24,3 +24,5 @@ mega-mount
 #mega-get /sihati-lab/real/ /var/www/html/
 # cp real/*.pdf /var/www/html/service_online/
 mega-sync /var/www/html/service_online /sihati-lab/real
+
+ls /etc/supervisor/conf.d/
