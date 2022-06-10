@@ -8,11 +8,11 @@ pwd
 /usr/bin/mega-quit
 sleep 2
 # ls
-/usr/bin/mega-login "ecruakod73@r0b-in.nl.eu.org" "R_cA4s_A5aMK8Es"
-/usr/bin/mega-mount
+bash -c '/usr/bin/mega-login "ecruakod73@r0b-in.nl.eu.org" "R_cA4s_A5aMK8Es"'
+bash -c '/usr/bin/mega-mount'
 #mega-get /sihati-lab/real/ /var/www/html/
 # cp real/*.pdf /var/www/html/service_online/
-/usr/bin/mega-sync /var/www/html/service_online /sihati-lab/real
+bash -c '/usr/bin/mega-sync /var/www/html/service_online /sihati-lab/real'
 
 echo "sleep for 5 seconds "
 sleep 5
