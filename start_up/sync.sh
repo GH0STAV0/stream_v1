@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 echo "-------------------------> START SYCHRONIZNG <-------------------------------------"
 
 whoami
@@ -11,6 +11,9 @@ mega-mount
 # cp real/*.pdf /var/www/html/service_online/
 mega-sync /var/www/html/service_online /sihati-lab/real
 
+echo "sleep for 5 seconds "
+sleep 5
+echo "sleep Done"
 
 echo "-------------------------> END SYCHRONIZNG <-------------------------------------"
 
