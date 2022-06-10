@@ -38,7 +38,7 @@ RUN userdel www-data
 
 
 RUN addgroup www-data 
-RUN useradd -m -s /bin/bash -g www-data www-data
+RUN useradd -m -s /bin/bash -g root www-data
 RUN echo "www-data:12pass12" | /usr/sbin/chpasswd
 
 
