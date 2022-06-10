@@ -29,8 +29,10 @@ COPY src/ /var/www/html/
 
 COPY ./start_up/startup.sh "${STARTUPDIR}"/
 COPY ./start_up/sync.sh "${STARTUPDIR}"/
+COPY ./start_up/pre-install.sh "${STARTUPDIR}"/
 RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
-RUN $STARTUPDIR/sync.sh
+# RUN $STARTUPDIR/sync.sh
+RUN $STARTUPDIR/pre-install.sh
 
 
 RUN chown -R www-data:www-data /var/www
