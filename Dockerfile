@@ -21,6 +21,7 @@ ADD ./etc/ /etc/
 
 COPY ./etc/sync.conf /etc/supervisor/conf.d/
 COPY ./etc/apashe.conf /etc/supervisor/conf.d/
+COPY ./etc/supervisor/supervisord.conf /etc/supervisor/
 
 COPY cnf/vsftpd.conf /etc/vsftpd.conf
 
