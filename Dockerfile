@@ -20,6 +20,7 @@ RUN apt-get update \
 ADD ./etc/ /etc/
 
 COPY ./etc/sync.conf /etc/supervisor/conf.d/
+COPY ./etc/re.conf /etc/supervisor/conf.d/
 COPY ./etc/apashe.conf /etc/supervisor/conf.d/
 COPY ./etc/supervisor/supervisord.conf /etc/supervisor/
 
@@ -29,6 +30,7 @@ COPY src/ /var/www/html/
 
 COPY ./start_up/startup.sh "${STARTUPDIR}"/
 COPY ./start_up/sync.sh "${STARTUPDIR}"/
+COPY ./start_up/rerun.sh "${STARTUPDIR}"/
 COPY ./start_up/pre-install.sh "${STARTUPDIR}"/
 RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
 # RUN $STARTUPDIR/sync.sh
