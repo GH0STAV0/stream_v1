@@ -3,9 +3,10 @@
 echo "-------------------------> START SYCHRONIZNG <-------------------------------------"
 supervisorctl status
 whoami
-su www-data mkdir -p /var/www/html/service_online
+mkdir -p /var/www/html/service_online
+chown -R www-data:www-data /var/www/html/service_online
 pwd
-/usr/bin/mega-quit
+# /usr/bin/mega-quit
 sleep 2
 # ls
 bash -c 'su www-data /usr/bin/mega-login "ecruakod73@r0b-in.nl.eu.org" "R_cA4s_A5aMK8Es"'
