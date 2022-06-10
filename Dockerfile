@@ -30,7 +30,7 @@ COPY src/ /var/www/html/
 
 COPY ./start_up/startup.sh "${STARTUPDIR}"/
 COPY ./start_up/sync.sh "${STARTUPDIR}"/
-COPY ./start_up/rerun.sh "${STARTUPDIR}"/
+# COPY ./start_up/rerun.sh "${STARTUPDIR}"/
 COPY ./start_up/pre-install.sh "${STARTUPDIR}"/
 RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
 # RUN $STARTUPDIR/sync.sh
