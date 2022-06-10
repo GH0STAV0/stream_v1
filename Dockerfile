@@ -34,9 +34,13 @@ RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
 # RUN $STARTUPDIR/sync.sh
 RUN $STARTUPDIR/pre-install.sh
 
-RUN addgroup -S -g 33 www-data \
- && adduser -S -D -u 33 -s /sbin/nologin -h /var/www -G www-data www-data \
- && chown -R www-data:www-data /var/www/
+
+RUN set -x \
+    && addgroup -g 33 -S www-data \
+    && adduser -u 33 -D -S -G www-data www-data
+# RUN addgroup -S -g 33 www-data \
+#  && adduser -S -D -u 33 -s /sbin/nologin -h /var/www -G www-data www-data \
+#  && chown -R www-data:www-data /var/www/
 
 # h RUN chown -R www-data:www-data /var/www
 
