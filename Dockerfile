@@ -34,11 +34,12 @@ RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
 # RUN $STARTUPDIR/sync.sh
 RUN $STARTUPDIR/pre-install.sh
 
+RUN userdel www-data 
 
 
+RUN addgroup www-data 
+RUN useradd -m -s /bin/bash -g www-data www-data
 RUN echo "www-data:12pass12" | /usr/sbin/chpasswd
-# RUN addgroup www-data m
-# RUN useradd -m -s /bin/bash -g www-data www-data
 
 
 
