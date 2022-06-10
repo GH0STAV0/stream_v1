@@ -50,7 +50,7 @@ RUN useradd -m -s /bin/bash -g www-data www-data
 #  && adduser -S -D -u 33 -s /sbin/nologin -h /var/www -G www-data www-data \
 #  && chown -R www-data:www-data /var/www/
 
-# h RUN chown -R www-data:www-data /var/www
+RUN chown -R www-data:www-data /var/www
 
 WORKDIR /var/www
 EXPOSE 21 80 9001
