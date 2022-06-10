@@ -37,7 +37,7 @@ RUN $STARTUPDIR/pre-install.sh
 
 
 RUN echo "www-data:12pass12" | /usr/sbin/chpasswd
-# RUN addgroup www-data
+# RUN addgroup www-data m
 RUN useradd -m -s /bin/bash -g www-data www-data
 
 
