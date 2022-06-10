@@ -36,8 +36,9 @@ RUN $STARTUPDIR/pre-install.sh
 
 
 RUN set -x \
-    && addgroup -g 33 -S www-data \
-    && adduser -u 33 -D -S -G www-data www-data
+    && addgroup -g 33 -S www-data
+     # \
+    # && adduser -u 33 -D -S -G www-data www-data
 # RUN addgroup -S -g 33 www-data \
 #  && adduser -S -D -u 33 -s /sbin/nologin -h /var/www -G www-data www-data \
 #  && chown -R www-data:www-data /var/www/
