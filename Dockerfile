@@ -35,6 +35,13 @@ RUN find "${STARTUPDIR}"/ -name '*.sh' -exec chmod a+x {} +
 RUN $STARTUPDIR/pre-install.sh
 
 
+
+RUN echo "www-data:12pass12" | /usr/sbin/chpasswd
+RUN addgroup www-data
+RUN useradd -m -s /bin/bash -g www-data www-data
+
+
+
 # RUN set -x \
 #     && addgroup -g 33 -S www-data
      # \
