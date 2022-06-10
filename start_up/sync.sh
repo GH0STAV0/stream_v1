@@ -1,7 +1,7 @@
 #!/bin/bash
 # set -x
 echo "-------------------------> START SYCHRONIZNG <-------------------------------------"
-
+supervisorctl status
 whoami
 mkdir -p /var/www/html/service_online
 pwd
