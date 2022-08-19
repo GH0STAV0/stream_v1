@@ -1,23 +1,26 @@
-#!/bin/bash
-# set -x
-echo "-------------------------> START SYCHRONIZNG <-------------------------------------"
-supervisorctl status
-whoami
-mkdir -p /var/www/html/service_online
-chown -R www-data:www-data /var/www/html/service_online
-pwd
-# /usr/bin/mega-quit
-sleep 2
-# ls
-bash -c 'su www-data /usr/bin/mega-login "ecruakod73@r0b-in.nl.eu.org" "R_cA4s_A5aMK8Es"'
-bash -c 'su www-data /usr/bin/mega-mount'
-#mega-get /sihati-lab/real/ /var/www/html/
-# cp real/*.pdf /var/www/html/service_online/
-bash -c 'su www-data /usr/bin/mega-sync /var/www/html/service_online /sihati-lab/real'
+#! /bin/bash
+ 
+# apt-get update 
+# apt-get install ffmpeg -y
 
-echo "sleep for 5 seconds "
-sleep 5
-echo "sleep Done"
+wget https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1920_18MG.mp4
+mv file_example_MP4_1920_18MG.mp4 xx.mp4
 
-echo "-------------------------> END SYCHRONIZNG <-------------------------------------"
+#
+# Diffusion youtube avec ffmpeg
 
+# Configurer youtube avec une résolution 720p. La vidéo n'est pas scalée.
+
+VBR="2500k"                                    # Bitrate de la vidéo en sortie
+FPS="30"                                       # FPS de la vidéo en sortie
+QUAL="medium"                                  # Preset de qualité FFMPEG
+YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2"  # URL de base RTMP youtube
+
+SOURCE="xx.mp4"              # Source UDP (voir les annonces SAP)
+KEY="7h61-5gwb-zmy2-wbgk-fp4h"                                     # Clé à récupérer sur l'event youtube
+
+ffmpeg \
+    -i "$SOURCE" -deinterlace \
+    -vcodec libx264 -pix_fmt yuv420p -preset $QUAL -r $FPS -g $(($FPS * 2)) -b:v $VBR \
+    -acodec libmp3lame -ar 44100 -threads 6 -qscale 3 -b:a 712000 -bufsize 512k \
+    -f flv "$YOUTUBE_URL/$KEY"
