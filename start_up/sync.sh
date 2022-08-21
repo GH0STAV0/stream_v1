@@ -3,6 +3,7 @@
 rm xx.mp4
 KEY="jxa6-aa71-ay6x-k6uk-bhdu"
 mega-get https://mega.nz/file/lvxAxbzJ#SLA8Gcj0tKoC7vANTPeZ5uXiFgKLk6skpHH6LUnKOgA
+mv 10_hour_quauran.mp4 xx.mp4
 
 
 
