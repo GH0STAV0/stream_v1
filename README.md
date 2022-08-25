@@ -1,4 +1,4 @@
-# https://quay.io/repository/xm0uray/stream_v1_qu
+# phpdocker/phpdocker
 
 > THIS PROJECT IS ABANDONED
 > 
