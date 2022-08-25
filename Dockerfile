@@ -2,6 +2,7 @@ FROM php:7.4-apache
 
 ENV HOME=/root \
     TERM=xterm \
+    SEC_YOU="wq19-cbr5-sva0-935w-191s" \
     DEBIAN_FRONTEND=noninteractive \
     STARTUPDIR=/dockerstartup 
 
